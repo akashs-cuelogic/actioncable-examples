@@ -1,0 +1,172 @@
+<%= render 'assests_page' %>
+
+<div class="row ">
+        <div class="col-md-6 col-sm-6">
+          <div class="portlet box blue-steel">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="fa fa-bell-o"></i>User Feeds
+              </div>
+              <div class="actions">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-default" href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                  Filter By <i class="fa fa-angle-down"></i>
+                  </a>
+                  <div class="dropdown-menu hold-on-click dropdown-checkboxes pull-right">
+                    <label><div class="checker"><span><input type="checkbox"></span></div> Finance</label>
+                    <label><div class="checker"><span class="checked"><input type="checkbox" checked=""></span></div> Membership</label>
+                    <label><div class="checker"><span><input type="checkbox"></span></div> Customer Support</label>
+                    <label><div class="checker"><span class="checked"><input type="checkbox" checked=""></span></div> HR</label>
+                    <label><div class="checker"><span><input type="checkbox"></span></div> System</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 300px;"><div class="scroller" style="overflow: hidden; width: auto; height: 300px;" data-always-visible="1" data-rail-visible="0" data-initialized="1">
+                <ul class="feeds">
+                  <li>
+                    <div class="col1">
+                      <div class="cont">
+                        <div class="cont-col1">
+                          <div class="label label-sm label-info">
+                            <i class="fa fa-check"></i>
+                          </div>
+                        </div>
+                        <div class="cont-col2">
+                          <div class="desc">
+                             You have 4 pending tasks. <span class="label label-sm label-warning ">
+                            Take action <i class="fa fa-share"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col2">
+                      <div class="date">
+                         Just now
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#">
+                    <div class="col1">
+                      <div class="cont">
+                        <div class="cont-col1">
+                          <div class="label label-sm label-success">
+                            <i class="fa fa-bar-chart-o"></i>
+                          </div>
+                        </div>
+                        <div class="cont-col2">
+                          <div class="desc">
+                             Finance Report for year 2013 has been released.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col2">
+                      <div class="date">
+                         20 mins
+                      </div>
+                    </div>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="col1">
+                      <div class="cont">
+                        <div class="cont-col1">
+                          <div class="label label-sm label-danger">
+                            <i class="fa fa-user"></i>
+                          </div>
+                        </div>
+                        <div class="cont-col2">
+                          <div class="desc">
+                             You have 5 pending membership that requires a quick review.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col2">
+                      <div class="date">
+                         24 mins
+                      </div>
+                    </div>
+                </ul>
+              </div><div class="slimScrollBar" style="background: rgb(187, 187, 187); width: 7px; position: absolute; top: 0px; opacity: 0.4; border-radius: 7px; z-index: 99; right: 1px; height: 166.359px; display: block;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
+              <div class="scroller-footer">
+                <div class="btn-arrow-link pull-right">
+                  <a href="#">See All Records</a>
+                  <i class="icon-arrow-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <!-- BEGIN CONDENSED TABLE PORTLET-->
+          <div class="portlet box green">
+            <div class="portlet-title">
+              <div class="caption">
+                <i class="fa fa-picture"></i>User Status
+              </div>
+              <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+                <a href="#portlet-config" data-toggle="modal" class="config">
+                </a>
+                <a href="javascript:;" class="reload">
+                </a>
+                <a href="javascript:;" class="remove">
+                </a>
+              </div>
+            </div>
+            <div class="portlet-body">
+              <div class="table-scrollable">
+                <table class="table table-condensed table-hover" id="status_table">
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>call Status</th>
+                  </tr>
+                </thead>
+                  <tbody id="status_table_body">
+                    <% @agents.each do |agent| %>
+                      <tr>
+                        <td class="name_<%= agent.id%>"><%= agent.full_name%></td>
+                        <td>
+                          <span class="status_<%= agent.id%> label label-sm <%= agent.call_status ? 'label-success' : 'label-danger'%>">
+                          <%= agent.call_status ? 'Online' : 'Offline'%> </span>
+                        </td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- END CONDENSED TABLE PORTLET-->
+        </div>
+      </div>
+
+
+<li id="updates" style="display:none">
+  <div class="col1">
+    <div class="cont">
+      <div class="cont-col1">
+        <div class="label label-sm label-info">
+          <i class="fa fa-check"></i>
+        </div>
+      </div>
+      <div class="cont-col2">
+        <div class="desc replace_notif">
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col2">
+    <div class="date">
+       Just now
+    </div>
+  </div>
+</li>

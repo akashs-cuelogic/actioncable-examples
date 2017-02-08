@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 
 gem 'jbuilder', '~> 2.0'
+gem 'font-awesome-rails'
+gem 'compass'
 
 group :development, :test do
   gem 'byebug'
